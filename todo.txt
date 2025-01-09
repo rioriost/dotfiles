@@ -17,7 +17,7 @@
     (2) Add full disk access to Defender Endpoint
     (3) Update virus definitions
     (4) Logout and change password
-    (5) Register device for Platform SSO
+    (5) Register device for Platform SSO, after adding full disk access to 'com.microsoft.dlp.daemon'(?)
     (6) Enable Entra ID Passkey
 9. Configure O365 / Teams / OneDrive
     (1) Add full disk access to OneDrive
