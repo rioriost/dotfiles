@@ -1,0 +1,14 @@
+#!/usr/bin/expect -f
+
+set timeout -1
+set password $env(adminPass)
+
+spawn /opt/homebrew/bin/brew bundle --file=./Brewfile
+
+expect {
+    "Password:" {
+        send "$password\r"
+        exp_continue
+    }
+    eof
+}

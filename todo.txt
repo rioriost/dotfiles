@@ -1,0 +1,37 @@
+# Mainly, there are the tasks to require the authentication.
+
+1. Configure 1Password
+2. owncloud settings and sync
+    (1) account
+    (2) check off 'Use Monochrome Icons in the system tray'
+    (3) Increase 'Ask for confirmation before synchronizing folders larger than' from 500MB to 100000MB
+    (4) sync
+3. After owncloud sync including 'bin' directory,
+    set 'serverAdminPass' env with 'export serverAdminPass=********',
+    open a new Terminal and execute 'make post'
+4. Configure Logi Options+
+5. Check Rectangle settings
+5. Configure Adobe Creative Cloud
+6. Configure ATOK
+    (1) Add full disk access to ATOK入力モード設定ツール.app
+    (2) Add full disk access to JUST Online Update/updatehelper
+7. Configure Mail.app
+8. Configure Company Portal
+    (1) Add full disk access to /Library/PrivilegedHelperTools/com.microsoft.autoupdate.helper
+    (2) Add full disk access to Defender Endpoint
+    (3) Update virus definitions
+    (4) Logout and change password
+    (5) Register device for Platform SSO
+    (6) Enable Entra ID Passkey
+9. Configure O365 / Teams / OneDrive
+    (1) Add full disk access to OneDrive
+10. Configure GitHub Copilot for zed
+11. Configure Dropbox
+    (1) Add full disk access to Dropbox
+12. Configure Discord
+13. Create TweetDeck app with Edge
+14. Full Disk Access
+    (1) Terminal
+    (2) Zed
+
+(optional) setting up 'Optys'
