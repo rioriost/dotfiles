@@ -27,6 +27,12 @@ init:
 		exit 1; \
 	fi
 
+	@echo "${BLUE}Checking serverAdminPass is set...${RESET}"
+	@if [ -z "$$serverAdminPass" ]; then \
+		echo "${RED}serverAdminPass is not set. Please set it with 'export' before running the script.${RESET}"; \
+		exit 1; \
+	fi
+
 xcode:
 	@xcode_installed=$$(xcode-select -p); \
 	if [ ! -e "$$xcode_installed" ]; then \
