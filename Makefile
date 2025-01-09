@@ -5,11 +5,8 @@ BLUE = \033[0;34m
 RESET = \033[0m
 
 # Do everything.
-all: init xcode brew bundle defaults azcompletion duti zed_settings copy_configs manual_configs
+all: init xcode brew bundle defaults azcompletion duti zed_settings copy_configs zprofile sshkeygen folderaction manual_configs
 	@echo "${GREEN}macOS setup is complete.${RESET}"
-
-post: init postsync sshkeygen folderaction
-	@echo "${GREEN}Post-sync is complete.${RESET}"
 
 # Set initial preference.
 init:
@@ -88,19 +85,14 @@ zed_settings:
 
 copy_configs:
 	@cp -f config/Rectangle/com.knollsoft.Rectangle.plist ${HOME}/Library/Preferences/com.knollsoft.Rectangle.plist
+	@osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Rectangle.app", hidden:false}'
 	@cp -f config/Terminal/com.apple.Terminal.plist ${HOME}/Library/Preferences/com.apple.Terminal.plist
 	@cp -f config/Dock/com.apple.dock.plist ${HOME}/Library/Preferences/com.apple.dock.plist
 
-manual_configs:
-	@echo "${BLUE}Opening todo.txt...${RESET}"
-	@open todo.txt
-	@open /Applications/owncloud.app
-
-postsync:
-	@echo "${BLUE}Executing postsync...${RESET}"
+zprofile:
+	@echo "${BLUE}Linking zprofile...${RESET}"
 	@rm -f ${HOME}/.zprofile; \
-	ln -s ${HOME}/owncloud/Settings/zprofile ${HOME}/.zprofile
-	@osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Rectangle.app", hidden:false}'
+	ln -s ${HOME}/Library/Mobile Documents/com~apple~CloudDocs/zprofile ${HOME}/.zprofile
 
 sshkeygen:
 	@echo "${BLUE}Generating SSH key and share it with servers...${RESET}"
@@ -112,3 +104,8 @@ folderaction:
 	@cp -r ./Workflows/ ${HOME}/Library/Workflows/
 	@chmod 755 ${HOME}/owncloud/bin/rename.sh
 	@osascript fa.scpt
+
+manual_configs:
+	@echo "${BLUE}Opening todo.txt...${RESET}"
+	@open todo.txt
+	@open /Applications/owncloud.app
