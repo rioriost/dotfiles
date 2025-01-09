@@ -4,4 +4,4 @@
 2. cd dotfiles
 3. export adminPass='xxxxxxxx'
 4. make (all)
-5. after sync of owncloud ('bin' directory), make post
+5. after sync of owncloud ('bin' directory), export serverAdminPass='********', make post
