@@ -107,7 +107,9 @@ sshkeygen:
 folderaction:
 	@echo "${BLUE}Configuring Folder Action...${RESET}"
 	@cp -r ./Workflows/ ${HOME}/Library/Workflows/
-	@chmod 755 ${HOME}/owncloud/bin/rename.sh
+	@mkdir ${HOME}/bin; \
+	cp -f rename.sh ${HOME}/bin/rename.sh; \
+	chmod 755 ${HOME}/bin/rename.sh
 	@osascript fa.scpt
 
 manual_configs:
