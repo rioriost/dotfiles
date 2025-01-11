@@ -13,6 +13,7 @@ brew "mas"
 brew "mysql-client"
 brew "nmap"
 brew "postgresql@16", restart_service: true
+brew "rsync"
 brew "tcl-tk"
 brew "wget"
 brew "uv"
