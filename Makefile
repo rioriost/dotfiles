@@ -5,7 +5,7 @@ BLUE = \033[0;34m
 RESET = \033[0m
 
 # Do everything.
-all: init xcode brew bundle defaults azcompletion duti zed_settings copy_configs zprofile sshkeygen folderaction manual_configs
+all: init xcode brew bundle defaults azcompletion duti zed_settings copy_configs zprofile sshkeygen folderaction uv manual_configs
 	@echo "${GREEN}macOS setup is complete.${RESET}"
 
 # Set initial preference.
@@ -111,6 +111,10 @@ folderaction:
 	cp -f rename.sh ${HOME}/bin/rename.sh; \
 	chmod 755 ${HOME}/bin/rename.sh
 	@osascript fa.scpt
+
+uv:
+    @echo "${BLUE}Installing uv...${RESET}"
+    @curl -LsSf https://astral.sh/uv/install.sh | sh
 
 manual_configs:
 	@echo "${BLUE}Opening todo.txt...${RESET}"
