@@ -126,6 +126,10 @@ led:
 	launchctl kickstart -k gui/$(id -u)/st.rio.controlled; \
 	launchctl print gui/$(id -u)/st.rio.controlled
 
+sudo_w_watch:
+	@echo "${BLUE}Configuring pam-watchid...${RESET}"
+	@/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/logicer16/pam-watchid/HEAD/install.sh)" -- enable
+
 manual_configs:
 	@echo "${BLUE}Opening todo.txt...${RESET}"
 	@open todo.txt
