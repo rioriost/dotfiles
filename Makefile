@@ -113,8 +113,8 @@ folderaction:
 	@osascript fa.scpt
 
 uv:
-    @echo "${BLUE}Installing uv...${RESET}"
-    @curl -LsSf https://astral.sh/uv/install.sh | sh
+	@echo "${BLUE}Installing uv...${RESET}"
+	@curl -LsSf https://astral.sh/uv/install.sh | sh
 
 manual_configs:
 	@echo "${BLUE}Opening todo.txt...${RESET}"
