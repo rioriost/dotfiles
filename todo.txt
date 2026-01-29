@@ -13,21 +13,18 @@
     (2) Add full disk access to JUST Online Update/updatehelper
 7. Configure Mail.app
 8. Configure Company Portal
-    (1) Add full disk access to /Library/PrivilegedHelperTools/com.microsoft.autoupdate.helper
-    (2) Add full disk access to Defender Endpoint
-    (3) Update virus definitions
-    (4) Logout and change password
-    (5) Register device for Platform SSO, after adding full disk access to 'com.microsoft.dlp.daemon'(?)
-    (6) Enable Entra ID Passkey
+    (1) Add full disk access to Defender Endpoint
+    (2) Update virus definitions
+    (3) Logout and change password
+    (4) Register device for Platform SSO, after adding full disk access to 'com.microsoft.dlp.daemon'(?)
+    (5) Enable Entra ID Passkey
 9. Configure O365 / Teams / OneDrive
     (1) Add full disk access to OneDrive
 10. Configure GitHub Copilot for zed
 11. Configure Dropbox
     (1) Add full disk access to Dropbox
 12. Configure Discord
-13. Create TweetDeck app with Edge
+13. Create TweetDeck app with Safari
 14. Full Disk Access
     (1) Terminal
     (2) Zed
-
-(optional) setting up 'Optys'
