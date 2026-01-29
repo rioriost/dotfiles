@@ -97,7 +97,7 @@ copy_configs:
 
 zprofile:
 	@echo "${BLUE}Linking zprofile...${RESET}"
-	@ln -s '${HOME}/Library/Mobile Documents/com~apple~CloudDocs/zprofile' ${HOME}/.zprofile
+	@ln -sFf '${HOME}/Library/Mobile Documents/com~apple~CloudDocs/zprofile' ${HOME}/.zprofile
 
 sshkeygen:
 	@echo "${BLUE}Generating SSH key and share it with servers...${RESET}"
