@@ -116,6 +116,16 @@ uv:
 	@echo "${BLUE}Installing uv...${RESET}"
 	@curl -LsSf https://astral.sh/uv/install.sh | sh
 
+led:
+	@echo "${BLUE}Configuring controlled...${RESET}"
+	@cp -f st.rio.controlled.plist ${HOME}/Library/LaunchAgents/; \
+	launchctl load ~/Library/LaunchAgents/st.rio.controlled.plist; \
+	launchctl bootout gui/$(id -u)/st.rio.controlled 2>/dev/null || true; \
+	launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/st.rio.controlled.plist; \
+	launchctl enable   gui/$(id -u)/st.rio.controlled; \
+	launchctl kickstart -k gui/$(id -u)/st.rio.controlled; \
+	launchctl print gui/$(id -u)/st.rio.controlled
+
 manual_configs:
 	@echo "${BLUE}Opening todo.txt...${RESET}"
 	@open todo.txt
