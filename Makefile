@@ -5,7 +5,7 @@ BLUE = \033[0;34m
 RESET = \033[0m
 
 # Do everything.
-all: init xcode brew bundle defaults azcompletion duti zed_settings copy_configs zprofile sshkeygen folderaction uv manual_configs
+all: init xcode brew bundle defaults azcompletion duti zed_settings copy_configs zprofile sshkeygen folderaction uv led sudo_w_watch manual_configs
 	@echo "${GREEN}macOS setup is complete.${RESET}"
 
 # Set initial preference.
