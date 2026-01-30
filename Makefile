@@ -118,16 +118,8 @@ uv:
 
 led:
 	@echo "${BLUE}Configuring controlled...${RESET}"
-	@export PLIST_SRC="st.rio.controlled.plist"; \
-	export PLIST_DST="${HOME}/Library/LaunchAgents/st.rio.controlled.plist"; \
-	export DOMAIN="gui/$(id -u)"; \
-	export LABEL="st.rio.controlled"; \
-	install -m 0644 "${PLIST_SRC}" "${PLIST_DST}"; \
-	launchctl bootout "${DOMAIN}" "${PLIST_DST}" 2>/dev/null || true; \
-	launchctl bootstrap "${DOMAIN}" "${PLIST_DST}"; \
-	launchctl enable "${DOMAIN}/${LABEL}"; \
-	launchctl kickstart -k "${DOMAIN}/${LABEL}"; \
-	launchctl print "${DOMAIN}/${LABEL}"
+	@chmod 755 led.sh;\
+	./led.sh > /dev/null
 
 sudo_w_watch:
 	@echo "${BLUE}Configuring pam-watchid...${RESET}"
