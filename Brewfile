@@ -22,7 +22,7 @@ brew "mas"
 brew "mysql-client"
 brew "nmap"
 brew "numpy"
-brew "postgresql@16", restart_service: :changed
+brew "postgresql@18", restart_service: :changed
 brew "pyinstaller"
 brew "python@3.9"
 brew "python@3.10"
@@ -67,7 +67,3 @@ cask "rectangle"
 cask "vlc"
 cask "zed"
 mas "1Password for Safari", id: 1569813296
-mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
