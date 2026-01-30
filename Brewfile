@@ -1,5 +1,3 @@
-tap "homebrew/bundle"
-tap "homebrew/services"
 tap "rioriost/agefreighter", "https://github.com/rioriost/agefreighter.git"
 tap "rioriost/celestsp"
 tap "rioriost/macocr"
