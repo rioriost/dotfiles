@@ -123,7 +123,19 @@ led:
 
 sudo_w_watch:
 	@echo "${BLUE}Configuring pam-watchid...${RESET}"
-	@/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/logicer16/pam-watchid/HEAD/install.sh)" -- enable
+	@curl -O -fsSL https://raw.githubusercontent.com/logicer16/pam-watchid/HEAD/install.sh
+	@shpath="./install.sh"; \
+	if [ ! -e "$$shpath" ]; then \
+		echo "\n${RED}Could not find ${shpath}!${RESET}"; \
+		exit 1; \
+	fi; \
+	chmod 755 $$shpath; \
+	expect -c "\
+	spawn bash $$shpath -- enable; \
+	expect \"Password:\"; \
+	send \"$(adminPass)\n\"; \
+	interact"; \
+	rm -f $$shpath
 
 manual_configs:
 	@echo "${BLUE}Opening todo.txt...${RESET}"
