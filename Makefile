@@ -123,7 +123,7 @@ led:
 
 sudo_w_watch:
 	@echo "${BLUE}Configuring pam-watchid...${RESET}"
-	@/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/logicer16/pam-watchid/HEAD/install.sh)" -- enable
+	@/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/logicer16/pam-watchid/HEAD/install.sh)" -- enable
 
 manual_configs:
 	@echo "${BLUE}Opening todo.txt...${RESET}"
