@@ -19,8 +19,5 @@ launchctl bootstrap "${DOMAIN}" "${PLIST_DST}"
 # 4) 無効化されている可能性に備えて有効化
 launchctl enable "${DOMAIN}/${LABEL}"
 
-# 5) 起動（再起動含む）
-launchctl kickstart -k "${DOMAIN}/${LABEL}"
-
-# 6) 状態表示
+# 5) 状態表示
 launchctl print "${DOMAIN}/${LABEL}"
