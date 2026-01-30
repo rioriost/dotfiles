@@ -130,11 +130,8 @@ sudo_w_watch:
 		exit 1; \
 	fi; \
 	chmod 755 $$shpath; \
-	expect -c "\
-	spawn bash $$shpath -- enable; \
-	expect \"Password:\"; \
-	send \"$(adminPass)\n\"; \
-	interact"; \
+	printf '%s\n' "$$adminPass" | sudo -S -v; \
+	bash $$shpath -- enable; \
 	rm -f $$shpath
 
 manual_configs:
